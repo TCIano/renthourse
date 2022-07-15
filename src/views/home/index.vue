@@ -1,5 +1,11 @@
 <template>
-  <div>首页</div>
+  <div>
+    <van-swipe :autoplay="3000">
+      <van-swipe-item v-for="(image, index) in images" :key="index">
+        <img v-lazy="image" />
+      </van-swipe-item>
+    </van-swipe>
+  </div>
 </template>
 
 <script>
