@@ -32,7 +32,9 @@
       :desc="item.desc"
       :tags="item.tags"
       :src="`${base}${item.houseImg}`"
-      @click-thumb="gotoDetail"
+      :title="item.title"
+      :id="item.houseCode"
+      @gotoDetail="gotoDetail"
     >
     </comList>
   </div>
@@ -42,6 +44,7 @@
 import comList from '@/components/comList.vue'
 import { collect } from '@/api/user'
 export default {
+  name: 'collect',
   data () {
     return {
       collectList: [],
@@ -55,14 +58,20 @@ export default {
     // 返回上一级
     backHomePage () {
       this.$router.back()
+      console.log(this)
     },
     // 获取收藏列表
     async getCollectList () {
-      const token = localStorage.getItem('token')
-      console.log(token)
-      const res = await collect(token)
+      // const token = localStorage.getItem('MY_TOKEN')
+      // console.log(token)
+      const res = await collect()
       console.log(res)
       this.collectList = res.data.body
+    },
+    gotoDetail (id) {
+      console.log(id)
+      this.$store.commit('getDetailId', id)
+      this.$router.push(`/detail/${id}`)
     }
   },
   created () {

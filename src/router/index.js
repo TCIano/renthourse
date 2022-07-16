@@ -53,6 +53,10 @@ const routes = [
     component: () => import('@/views/my/rent.vue')
   },
   {
+    path: '/detail/:id',
+    component: () => import('@/components/detail.vue')
+  },
+  {
     path: '*',
     component: () => import('@/views/NotFound.vue')
   }
@@ -72,7 +76,7 @@ router.beforeEach((to, from, next) => {
     return next()
   }
   // 访问有登录权限的页面，没有token就弹出去‘无权访问去登录’
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem('MY_TOKEN')
   console.log(token)
   if (!token) {
     // this.$toast.fail('未登录请前去登录')

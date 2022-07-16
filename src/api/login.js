@@ -21,9 +21,9 @@ export const login = (data) => {
 // 用户信息api
 export const info = (token) => {
   return request({
-    url: '/user',
-    headers: {
-      authorization: token
-    }
+    url: '/user'
+    // headers: {
+    //   authorization: token
+    // }
   })
 }

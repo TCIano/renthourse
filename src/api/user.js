@@ -1,10 +1,15 @@
 import request from '@/util/request'
 
-export const collect = (token) => {
+/**
+ *
+ * @param {Strig} token
+ * @returns
+ */
+export const collect = () => {
   return request({
-    url: '/user/favorites',
-    headers: {
-      authorization: token
-    }
+    url: '/user/favorites'
+    // headers: {
+    //   authorization: token
+    // }
   })
 }

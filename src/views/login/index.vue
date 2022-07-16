@@ -60,7 +60,8 @@ export default {
         this.$toast.success(res.data.description)
         // 登录成功之后跳转到/home
         // 存储token
-        localStorage.setItem('token', res.data.body.token)
+        // localStorage.setItem('token', res.data.body.token)
+        this.$store.commit('setUser', res.data.body.token)
         this.$router.push({
           path: '/all/home'
         })

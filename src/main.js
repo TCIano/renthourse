@@ -6,6 +6,7 @@ import Vant from 'vant'
 import 'vant/lib/index.css'
 import 'amfe-flexible'
 import '@/assets/font/iconfont.css'
+import '@/assets/font1/iconfont.css'
 Vue.use(Vant)
 Vue.config.productionTip = false
 

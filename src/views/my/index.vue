@@ -6,7 +6,7 @@
         <img src="@/assets/mybg.png" alt="" />
       </div>
       <div class="avator">
-        <img src="" alt="" />
+        <!-- <img src="" alt="" /> -->
       </div>
       <div class="peop"><span>游客</span></div>
       <van-sticky>
@@ -24,7 +24,7 @@
         <img src="@/assets/avatar.png" alt="" />
       </div>
       <div class="peop">
-        <span>{{ userInfo.nickname || '游客' }}</span>
+        <span>{{ userInfo.nickname || '' }}</span>
       </div>
       <div class="userContent">编辑个人资料</div>
       <van-sticky>
@@ -77,8 +77,13 @@ import { info } from '@/api/login'
 export default {
   data () {
     return {
-      token: localStorage.getItem('token'),
+      // token: !!this.$store.state.user,
       userInfo: {} // 存储用户信息
+    }
+  },
+  computed: {
+    token () {
+      return !!this.$store.state.user
     }
   },
   methods: {
@@ -91,7 +96,7 @@ export default {
     },
     // 获取用户信息 方法
     async getUserInfo () {
-      const res = await info(this.token)
+      const res = await info()
       console.log(res)
       this.userInfo = res.data.body
       console.log(this.userInfo)
@@ -106,9 +111,10 @@ export default {
         .then(() => {
           // on confirm
           // 清除token
-          localStorage.removeItem('token')
+          // localStorage.removeItem('MY_TOKEN')
           // 重新获取token
-          this.token = localStorage.getItem('token')
+          // this.token = localStorage.getItem('MY_TOKEN')
+          this.$store.commit('setUser', null)
         })
         .catch(() => {
           // on cancel
