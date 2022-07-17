@@ -1,10 +1,8 @@
 <template>
   <div>
-    <!-- <van-swipe :autoplay="3000">
-      <van-swipe-item v-for="item in imgList" :key="item.id">
-        <img v-lazy="`${base}${item.imgSrc}`" />
-      </van-swipe-item>
-    </van-swipe> -->
+    <!-- 头部搜索 -->
+
+    <!-- 轮播图 -->
     <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
       <van-swipe-item v-for="item in imgList" :key="item.id">
         <img :src="`${base}${item.imgSrc}`" alt="" />

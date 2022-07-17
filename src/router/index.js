@@ -1,6 +1,7 @@
 import { Toast } from 'vant'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '@/store'
 const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push (location, onResolve, onReject) {
   if (onResolve || onReject) {
@@ -76,9 +77,9 @@ router.beforeEach((to, from, next) => {
     return next()
   }
   // 访问有登录权限的页面，没有token就弹出去‘无权访问去登录’
-  const token = localStorage.getItem('MY_TOKEN')
+  const token = store.state.user
   console.log(token)
-  if (!token) {
+  if (token === '') {
     // this.$toast.fail('未登录请前去登录')
     Toast.fail('未登录,请前去登录')
     return next('/all/my')
