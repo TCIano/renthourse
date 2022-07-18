@@ -12,7 +12,6 @@ request.interceptors.request.use(
     if (token) {
       config.headers.Authorization = token
     }
-    console.log(config)
     return config
   },
   // 请求失败的fanhui

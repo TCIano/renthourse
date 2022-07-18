@@ -9,7 +9,11 @@ export default new Vuex.Store({
     user: getToken() || '',
 
     // 详细内容id
-    detailId: ''
+    detailId: '',
+    // 城市id
+    cityId: localStorage.getItem('cityId'),
+    // 当前选中城市
+    currentCity: localStorage.getItem('currentCity')
   },
   getters: {},
   mutations: {
@@ -20,6 +24,14 @@ export default new Vuex.Store({
     },
     getDetailId (state, payload) {
       state.detailId = payload
+    },
+    setCityId (state, payload) {
+      state.cityId = payload
+      localStorage.setItem('cityId', payload)
+    },
+    setCurrentCity (state, payload) {
+      state.currentCity = payload
+      localStorage.setItem('currentCity', payload)
     }
   },
   actions: {},

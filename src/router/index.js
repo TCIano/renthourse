@@ -23,7 +23,13 @@ const routes = [
       {
         path: 'home',
         // 路由懒加载
-        component: () => import('@/views/home')
+        component: () => import('@/views/home'),
+        children: [
+          {
+            path: 'allrent',
+            component: () => import('@/views/home/allRent')
+          }
+        ]
       },
       {
         path: 'search',
@@ -58,6 +64,11 @@ const routes = [
     component: () => import('@/components/detail.vue')
   },
   {
+    path: '/cityList',
+    component: () => import('@/views/home/cityList.vue')
+  },
+
+  {
     path: '*',
     component: () => import('@/views/NotFound.vue')
   }
@@ -78,7 +89,6 @@ router.beforeEach((to, from, next) => {
   }
   // 访问有登录权限的页面，没有token就弹出去‘无权访问去登录’
   const token = store.state.user
-  console.log(token)
   if (token === '') {
     // this.$toast.fail('未登录请前去登录')
     Toast.fail('未登录,请前去登录')
