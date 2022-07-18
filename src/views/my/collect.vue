@@ -44,7 +44,7 @@
 import comList from '@/components/comList.vue'
 import { collect } from '@/api/user'
 export default {
-  name: 'collect',
+  // name: 'collect',
   data () {
     return {
       collectList: [],

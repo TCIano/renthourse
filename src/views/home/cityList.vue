@@ -72,6 +72,7 @@ export default {
     listFileter () {
       // console.log(this.cityList)
       this.letter.forEach((item) => {
+        // 给最终数组设置26个字母的 属性值，并且给每个属性设置空数组的属性值
         this.filterList[item] = []
         // console.log(this.filterList)
         // console.log(this.cityList)

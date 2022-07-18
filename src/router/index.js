@@ -23,13 +23,7 @@ const routes = [
       {
         path: 'home',
         // 路由懒加载
-        component: () => import('@/views/home'),
-        children: [
-          {
-            path: 'allrent',
-            component: () => import('@/views/home/allRent')
-          }
-        ]
+        component: () => import('@/views/home')
       },
       {
         path: 'search',
