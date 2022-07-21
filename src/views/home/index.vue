@@ -26,13 +26,13 @@
 
     <!-- 按钮 -->
     <van-grid :column-num="4" center :border="false" clickable square>
-      <van-grid-item icon="photo-o" text="整租" to="/all/home/allrent">
+      <van-grid-item icon="photo-o" text="整租" to="/all/search">
         <!-- <van-icon name="star-o" /> -->
         <template #icon>
           <span class="iconfont icon-zhengzu"></span>
         </template>
       </van-grid-item>
-      <van-grid-item icon="photo-o" text="合租">
+      <van-grid-item icon="photo-o" text="合租" to="/all/search">
         <template #icon>
           <span class="iconfont icon-hezu"></span>
         </template>
@@ -42,7 +42,7 @@
           <span class="iconfont icon-ditu"></span>
         </template>
       </van-grid-item>
-      <van-grid-item icon="photo-o" text="去出租 ">
+      <van-grid-item icon="photo-o" text="去出租" to="/addrent">
         <template #icon>
           <span class="iconfont icon-shouye"></span>
         </template>

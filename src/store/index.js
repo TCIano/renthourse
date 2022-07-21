@@ -13,7 +13,9 @@ export default new Vuex.Store({
     // 城市id
     cityId: localStorage.getItem('cityId'),
     // 当前选中城市
-    currentCity: localStorage.getItem('currentCity')
+    currentCity: localStorage.getItem('currentCity'),
+    // 选中的当前小区
+    currentCommityId: ''
   },
   getters: {},
   mutations: {
@@ -33,6 +35,10 @@ export default new Vuex.Store({
     setCurrentCity (state, payload) {
       state.currentCity = payload
       localStorage.setItem('currentCity', payload)
+    },
+    setcurrentCommityId (state, payload) {
+      state.currentCommityId = payload
+      // localStorage.setItem('currentCommityId', payload)
     }
   },
   actions: {},

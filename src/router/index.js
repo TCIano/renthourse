@@ -61,7 +61,15 @@ const routes = [
     path: '/cityList',
     component: () => import('@/views/home/cityList.vue')
   },
-
+  {
+    path: '/addrent',
+    name: 'addrent',
+    component: () => import('@/views/home/rentHouse.vue')
+  },
+  {
+    path: '/searchGroup',
+    component: () => import('@/views/home/searchHouse.vue')
+  },
   {
     path: '*',
     component: () => import('@/views/NotFound.vue')

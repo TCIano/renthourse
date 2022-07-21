@@ -114,7 +114,7 @@ export default {
           // localStorage.removeItem('MY_TOKEN')
           // 重新获取token
           // this.token = localStorage.getItem('MY_TOKEN')
-          this.$store.commit('setUser', null)
+          this.$store.commit('setUser', '')
         })
         .catch(() => {
           // on cancel

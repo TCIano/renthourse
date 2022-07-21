@@ -155,7 +155,7 @@
 </template>
 
 <script>
-// import comList from '@/components/comList.vue'
+import comList from '@/components/comList.vue'
 
 import { getHousesInfo } from '@/api/house'
 
@@ -171,13 +171,16 @@ export default {
         宽带: '&#xe6ba;',
         热水器: '&#xe6fc;',
         沙发: '&#xe686;',
-        电视机: '&#xe90a;',
+        电视: '&#xe90a;',
         冰箱: '&#xe90b;',
         暖气: '&#xe90d;',
         洗衣机: '&#xe60f;',
         衣柜: '&#xe60d;'
       }
     }
+  },
+  components: {
+    comList
   },
 
   methods: {

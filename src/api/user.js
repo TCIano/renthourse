@@ -24,3 +24,13 @@ export const isCollect = (id) => {
     url: `/user/favorites/${id}`
   })
 }
+
+/**
+ *  查看已经发布房源
+ * @returns
+ */
+export const publishHouses = () => {
+  return request({
+    url: '/user/houses'
+  })
+}

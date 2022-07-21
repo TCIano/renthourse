@@ -24,6 +24,7 @@ export default {
   methods: {
     gotoCityList () {
       this.$emit('gotoCityList')
+      // console.log(this.$refs)
     }
   }
 }
